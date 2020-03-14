@@ -1,0 +1,23 @@
+package com.example.mydatabase.database;
+
+import androidx.room.Dao;
+import androidx.room.Delete;
+import androidx.room.Insert;
+import androidx.room.Query;
+import androidx.room.Update;
+
+@Dao
+public interface DataDiriDAO {
+    @Insert
+    Long insertData(DataDiri dataDiri);
+
+    @Query("Select * from datadiri_db")
+    DataDiri[] getData();
+
+    @Update
+    int update(DataDiri item);
+
+    @Delete
+    int deleteData(DataDiri item);
+
+}
